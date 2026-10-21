@@ -1,11 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Roadmap</title>
-    </head>
-    <body>
-        Hello World!
-    </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python to AI/ML Roadmap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#16222e;--mute:#5b6b7a;--paper:#f6f8fb;--card:#fff;--line:#d5dee8;--teal:#0e7c66;--amber:#e3a72f;--tint:#e6f3ef}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 "Source Sans 3",system-ui,sans-serif;display:grid;grid-template-columns:250px minmax(0,1fr)}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15;margin:0}
+a{color:var(--teal)}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+nav{position:sticky;top:0;height:100vh;padding:28px 22px;border-right:1px solid var(--line);background:var(--card);overflow:auto}
+nav strong{font:700 1.15rem "Bricolage Grotesque",system-ui,sans-serif}
+nav ol{list-style:none;padding:0;margin:20px 0}
+nav a{display:block;padding:7px 10px;border-radius:6px;text-decoration:none;color:var(--ink);font-size:.95rem}
+nav a:hover{background:var(--tint)}
+.bar{height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--teal);transition:width .3s}
+#pct{font-size:.9rem;color:var(--mute);margin:6px 0 0}
+main{padding:56px clamp(20px,5vw,64px) 80px;max-width:860px}
+header{margin-bottom:48px}
+h1{font-size:clamp(2.2rem,5vw,3.4rem);letter-spacing:-.02em}
+header p{color:var(--mute);max-width:60ch;font-size:1.1rem}
+.rules{background:var(--tint);border-left:5px solid var(--teal);padding:16px 22px;border-radius:0 8px 8px 0}
+.rules ol{margin:8px 0 0;padding-left:20px}
+section{margin-top:56px;scroll-margin-top:24px}
+section>h2{font-size:1.9rem}
+.meta{color:var(--mute);margin:6px 0 14px}
+.steps{list-style:none;margin:20px 0;padding:0 0 0 26px;border-left:3px solid var(--line)}
+.steps li{position:relative;padding:0 0 22px 18px}
+.steps li::before{content:"";position:absolute;left:-36px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--card);border:3px solid var(--teal)}
+.steps b{font:700 1.08rem "Bricolage Grotesque",system-ui,sans-serif;display:block}
+.steps span{display:block}
+.steps em{font-style:normal;font-weight:700;color:var(--teal)}
+.steps .chk em{color:#9a6a00}
+.proj{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:8px}
+.proj label{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);padding:12px 14px;border-radius:8px;cursor:pointer}
+.proj label:hover{border-color:var(--teal)}
+.proj input{width:20px;height:20px;margin-top:3px;accent-color:var(--teal);flex:none}
+.proj small{display:block;color:var(--mute)}
+.proj input:checked+div b{text-decoration:line-through;color:var(--mute)}
+h3{font-size:1.2rem;margin-top:30px}
+table{border-collapse:collapse;width:100%;background:var(--card);margin-top:12px}
+th,td{border:1px solid var(--line);padding:8px 12px;text-align:left}
+th{background:var(--tint)}
+footer{margin-top:64px;color:var(--mute)}
+@media(max-width:820px){body{display:block}nav{position:static;height:auto;border:0;border-bottom:1px solid var(--line)}nav ol{display:none}main{padding-top:32px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i{transition:none}}
+.lbl{font:700 1.02rem "Bricolage Grotesque",system-ui,sans-serif;margin:22px 0 8px;color:var(--teal)}
+.ex label{background:var(--tint);border-color:#b9ddd3}
+section ol.plain{padding-left:22px}
+.note{color:var(--mute);margin-top:4px}
+@media print{nav{display:none}body{display:block}section{break-inside:avoid}}
+
+</style>
+</head>
+<body>
+<nav>
+<strong>AI/ML Roadmap</strong>
+<ol></ol>
+<div class="bar" role="progressbar" aria-label="Tasks done"><i id="fill"></i></div>
+<p id="pct"></p>
+</nav>
+<main>
+<header>
+<h1>From zero Python to AI/ML</h1>
+<p>A build-first plan: about 8-10 hours a week, roughly 48 weeks. Each phase has steps, a "move on when you can" checklist and projects. Tick things off as you go; your progress is saved in this browser.</p>
+<div class="rules"><strong>The learning loop</strong>
+<ol class="plain">
+<li>Learn one small concept (15-25 minutes).</li>
+<li>Write a tiny example, then change it until you know what each part does.</li>
+<li>Build a feature with it without copying a full solution.</li>
+<li>Test edge cases, debug, and note what went wrong.</li>
+<li>Commit to GitHub with a short README.</li>
+<li>At the end of a phase, rebuild a smaller version from memory.</li>
+</ol></div>
+<div class="rules" style="margin-top:16px"><strong>Ground rules</strong>
+<ol class="plain">
+<li>Mostly build: roughly 25% learning, 65% coding, 10% review early on, then 30% concepts, 60% experiments, 10% write-up in the ML phases.</li>
+<li>Type every line yourself. Stuck? Try 20 minutes, search the error, then ask.</li>
+<li>Weeks are estimates, not deadlines. If a checkpoint feels shaky, take another week.</li>
+<li>Choose one main course per phase and use others only to fill gaps.</li>
+<li>Aim for 8-12 polished projects, not 20 half-finished ones. Projects marked ★ are the core set.</li>
+</ol></div>
+</header>
+<noscript>This page needs JavaScript to show the plan.</noscript>
+<div id="plan"></div>
+
+<section id="tips">
+<h2>Make every project portfolio-worthy</h2>
+<ol class="plain">
+<li><b>Problem:</b> one paragraph on who it helps and what it does.</li>
+<li><b>Scope:</b> list the first three features and add nothing else until they work.</li>
+<li><b>Build in slices:</b> one feature, test it, then the next.</li>
+<li><b>Test:</b> normal, edge and invalid inputs.</li>
+<li><b>README:</b> setup steps, usage, screenshots or sample output, limitations and lessons learned.</li>
+<li><b>Polish last:</b> clear file names, functions, useful comments and a clean Git history.</li>
+</ol>
+<h3>Weekly routine</h3>
+<table>
+<tr><th>Day</th><th>Time</th><th>Activity</th></tr>
+<tr><td>Mon-Thu</td><td>45-60 min</td><td>Learn one concept, code a tiny example, change it yourself</td></tr>
+<tr><td>Friday</td><td>45-60 min</td><td>Review the week and revisit confusing ideas</td></tr>
+<tr><td>Saturday</td><td>2-3 hours</td><td>Build the project feature of the week and write notes</td></tr>
+<tr><td>Sunday</td><td>1-2 hours</td><td>Debug, clean up, push to GitHub, plan next week</td></tr>
+</table>
+<h3>When you are stuck</h3>
+<ul>
+<li>Read the error from the bottom up; the last line usually names the problem.</li>
+<li>Delete code until the bug disappears, then add it back piece by piece.</li>
+<li>Explain the problem aloud, or write it as a forum question. Include your code and the exact error.</li>
+<li>Take a 15-minute break.</li>
+</ul>
+<h3>Common traps</h3>
+<ul>
+<li>Tutorial hell: watching without attempting the next step yourself.</li>
+<li>Jumping to neural networks before Python, pandas and evaluation feel easy.</li>
+<li>Copy-pasting code you cannot explain line by line.</li>
+<li>Skipping math, or trying to master all of it first. Learn it in small pieces next to code.</li>
+<li>Chasing certificates and leaderboard rank over understanding and reproducibility.</li>
+<li>Comparing your week 3 to someone else's year 3.</li>
+</ul>
+<h3>Where this leads</h3>
+<p>At university, your programming, data structures, discrete math, statistics and later ML courses will build on this. Arriving able to code, with a public GitHub portfolio, helps with internships, research roles and scholarships. Keep adding to your projects as you learn. Stretch ideas: a Telegram bot, a cricket match predictor, a movie recommender, a study planner app.</p>
+</section>
+</main>
+<script>
+var P=[
+{id:"p0",t:"Phase 0: Setup",m:"Week 0, do once",l:"Do",s:[
+["Install your tools","Python 3 (tick Add to PATH) and VS Code with the Python extension. If installing is a hassle, start in Google Colab and set up later."],
+["Git and GitHub","Create an account, install Git, and make a repo called learning-python."],
+["Terminal and environments","pwd, cd, ls (or dir), mkdir and python file.py. Then create a virtual environment (python -m venv .venv), activate it and pip install a package. Use one environment per project."],
+["Notebooks and secrets","Use Colab or Jupyter for exploring and charts, and .py files for reusable programs. Keep API keys out of GitHub: store them in a .env file and list it in .gitignore."]],
+x:["Run hello.py from the terminal, add a README, and push both to GitHub.","Create and activate a virtual environment and install requests inside it."],r:[]},
+{id:"p1",t:"Phase 1: Python fundamentals",m:"Weeks 1-8 · CS50P (Harvard, free) as the main course; Automate the Boring Stuff as a reference",s:[
+["Week 1: Variables, input, output","types, print, input, f-strings, arithmetic.","tip, BMI and BDT-to-USD converters.","ask name and age, print age in 10 years."],
+["Week 2: Conditionals and loops","if/elif/else, while, for, range, break.","Project 1, the guessing game with levels and replay.","FizzBuzz and a times table from memory."],
+["Week 3: Functions and errors","parameters, return, scope, try/except, reading tracebacks.","refactor the game into functions; write a validated-input function.","explain print versus return."],
+["Week 4: Lists, tuples, dicts, sets","indexing, slicing, comprehensions, dictionary methods.","Project 2, the contact book (add, search, edit, delete).","min, max, average and duplicates without libraries."],
+["Week 5: Strings and files","string methods, text files, CSV, JSON, safe reading and writing.","Project 3, the expense tracker in BDT with category totals.","count the most common words in a text file."],
+["Week 6: Modules and environments","imports, random, pathlib, datetime, pip, venv.","Project 4, password generator and strength checker.","call a public API using requests in a fresh venv."],
+["Week 7: Classes and objects","classes, __init__, methods, basic inheritance, only after functions feel easy.","Project 5, library management system.","a bank account class with deposit, withdraw and insufficient funds."],
+["Week 8: Phase capstone","debugging, simple assert tests, reading other people's code.","extend Project 3 into a personal finance manager with functions, saved data, validation and a monthly report.","a friend runs it from your README alone."]],
+x:["Write a function that takes input and returns a result, and explain return versus print.","Solve a problem with a list and a dictionary and say why you chose each.","Read a CSV or JSON file and handle a missing or malformed file without crashing.","Fix a bug by reading the traceback instead of changing code at random.","A friend can run your capstone from the README alone."],
+r:[["1. Number guessing game","Loops, conditionals"],["2. Contact book","Dictionaries, functions"],["3. Expense tracker ★","Files, CSV"],["4. Password generator and checker","Modules, strings"],["5. Library management system","OOP"]]},
+{id:"p2",t:"Phase 2: Git, problem-solving, core CS",m:"Weeks 7-14, overlapping Phase 1 · CS50x, MIT Missing Semester, SQLBolt",s:[
+["Weeks 7-9: Git, tests, clean code","branches, merges, pull requests, .gitignore; assert or unittest with normal, edge and invalid cases.","add tests and a README to two earlier projects; keep a clean Git history.","branch, change, merge and push unaided."],
+["Weeks 9-11: Data structures and algorithms","Big-O intuition, stacks, queues, hash maps, trees, linear and binary search, common sorts.","Project 6, plus 2-3 easy problems a week on LeetCode or HackerRank, explained in plain words.","binary search and merge sort from scratch."],
+["Weeks 11-14: SQL and scraping","SELECT, WHERE, ORDER BY, GROUP BY, JOIN, basic table design, SQLite from Python.","Projects 7 and 8.","a joined, grouped query."]],
+x:["Create a branch, change something, merge and push without a guide.","Explain why binary search needs sorted data and compare its Big-O with linear search.","Write a SQL query with a JOIN and GROUP BY.","Break a program into functions and test three edge cases."],
+r:[["6. Sorting and search visualizer","Algorithms, Big-O"],["7. Student records database ★","SQLite, menus"],["8. Web scraper","requests, BeautifulSoup"]]},
+{id:"p3",t:"Phase 3: Math for ML, through code",m:"Weeks 8-20, about 2-3 hours a week · 3Blue1Brown, StatQuest, Khan Academy",s:[
+["Weeks 8-14: Algebra and linear algebra","algebra refresh (functions, exponents, logs); vectors, matrices, dot product, matrix multiplication, shapes.","a matrix and vector toolkit in pure Python, then redo it in NumPy and compare speed."],
+["Weeks 14-17: Calculus","derivatives, partial derivatives, gradients, chain rule at an intuitive level.","fit a line with hand-coded gradient descent and plot the error falling at each step. This is how models learn."],
+["Weeks 17-20: Probability and statistics","conditional probability, Bayes, distributions, variance, sampling, correlation, uncertainty.","Monte Carlo simulations of dice, coin flips and the birthday paradox, compared with theory.","explain why more data makes an estimate more reliable."]],
+x:["Explain what a dot product represents with a small example.","Explain a derivative as a rate of change and a gradient as a direction of change.","Tell correlation from causation and say why a sample can mislead.","Connect gradient descent to repeatedly adjusting parameters to reduce a loss."],
+r:[["9. Matrix toolkit","Linear algebra"],["10. Gradient descent from scratch ★","Calculus, optimization"],["11. Probability simulator","Statistics"]]},
+{id:"p4",t:"Phase 4: Python for data work",m:"Weeks 16-24 · Kaggle Learn (Python, Pandas, Data Visualization), pandas tutorials",s:[
+["Weeks 16-18: NumPy","arrays, shapes, slicing, broadcasting, vectorized operations, random numbers.","redo three loop programs in NumPy and time them."],
+["Weeks 18-22: pandas and data hygiene","DataFrames, filtering, groupby, merge, dates; check types, units, missing values, duplicates and outliers.","Project 12, cleaning a messy real dataset and writing down every decision."],
+["Weeks 22-24: Visualization and analysis","matplotlib, seaborn, choosing the right chart, notebooks that tell a story.","Project 13 on a topic you care about (cricket, football, air quality, public transport, or a licensed Bangladesh dataset). Write the question, source, method, findings and limits.","load a new CSV and find three patterns in an hour."]],
+x:["Load an unfamiliar CSV, inspect it, clean obvious issues and make three useful charts.","Explain each chart and what it cannot prove.","Reproduce your analysis from a fresh notebook using the README."],
+r:[["12. Data cleaning challenge","pandas"],["13. Exploratory data analysis report ★","Charts, written insights, Jupyter"]]},
+{id:"p5",t:"Phase 5: Classical machine learning",m:"Weeks 22-34 · Andrew Ng's ML Specialization, Kaggle Intro and Intermediate ML, Géron's Hands-On ML as a reference",s:[
+["Weeks 22-26: Framing and supervised basics","problem framing (target, what is known at prediction time, which metric), train/validation/test split, baseline first, linear and logistic regression.","Project 14, then repeat it with scikit-learn and compare."],
+["Weeks 26-30: Models and evaluation","trees, forests, kNN, pipelines, cross-validation; MAE and RMSE; precision, recall, F1, confusion matrix; overfitting, regularization, class imbalance.","Project 15, comparing three models against a baseline and reporting errors honestly."],
+["Weeks 30-34: Leakage, unsupervised, wrap-up","data leakage, k-means, PCA, grid search.","Projects 16 and 17.","enter a Kaggle beginner competition such as Titanic. Clean explanation matters more than rank."]],
+x:["Explain training, validation and test data.","Beat a simple baseline with a more complex model on a suitable metric.","Describe one way leakage can make a score look unrealistically good.","Explain two model errors and what you would test next.","Re-run the project from a clean environment using your README."],
+r:[["14. Linear regression from scratch","ML fundamentals"],["15. House price predictor ★","Feature engineering, model comparison"],["16. Spam email classifier ★","TF-IDF, classification"],["17. Student performance predictor or customer segmentation","Regression or clustering"]]},
+{id:"p6",t:"Phase 6: Deep learning foundations",m:"Weeks 34-42 · PyTorch tutorials, fast.ai, Karpathy's Zero to Hero (pick one main path)",s:[
+["Weeks 34-38: Neural network basics","tensors, layers, activations, loss, optimizers, epochs, batches, learning rate, backpropagation in concept, PyTorch training loops.","Project 18, with loss curves and a review of wrong predictions."],
+["Weeks 38-42: Computer vision","CNNs, augmentation, transfer learning, Colab GPU, saving and loading weights.","Project 19 on images you collect ethically (local foods, leaves). Compare a simple baseline with transfer learning, then write a model card: intended use, data source, limits and failure examples."]],
+x:["Explain tensor, loss, epoch and optimizer in your own words.","Keep the test set untouched while tuning.","Show a loss curve and inspect misclassified examples, not just accuracy.","Explain why a model that works on one dataset can fail in the real world."],
+r:[["18. MNIST digit classifier","PyTorch basics"],["19. Custom image classifier ★","Transfer learning, model card"]]},
+{id:"p7",t:"Phase 7: Choose a direction and ship",m:"Weeks 42-48+ · Hugging Face course, Streamlit or Gradio docs",s:[
+["Choose a focus","pick one: tabular prediction, vision, NLP or recommendations. For NLP, learn tokens, embeddings and transformer intuition and use pretrained models responsibly.","a capstone option: Bangla sentiment explorer (only with a properly licensed dataset), image classifier for a small set of objects, recommendation prototype for books or learning resources, or a community data dashboard."],
+["Ship it","Streamlit or Gradio, input validation, licenses and privacy; never expose keys or private data.","Project 20, deployed on Hugging Face Spaces or runnable with one command locally.","a stranger can use it and read how it was built."]],
+x:["A new user can follow your README and run the project.","You can explain data, baseline, metrics, mistakes and limits without reading from a script.","No leaked credentials and no unsupported high-stakes claims.","Write down three concrete next improvements."],
+r:[["20. End-to-end AI app, deployed ★","Deployment, README, honest limitations"]]}
+];
+var nav=document.querySelector("nav ol"),host=document.getElementById("plan"),n=0;
+function cb(t,sm){return '<li><label><input type="checkbox" data-i="'+(n++)+'"><div><b>'+t+'</b>'+(sm?'<small>'+sm+'</small>':'')+'</div></label></li>'}
+P.forEach(function(p){
+nav.insertAdjacentHTML("beforeend",'<li><a href="#'+p.id+'">'+p.t+'</a></li>');
+var st=p.s.map(function(s){return '<li><b>'+s[0]+'</b>'+[[p.l||"Learn",s[1],""],["Build",s[2],""],["Check",s[3],"chk"]].filter(function(x){return x[1]}).map(function(x){return '<span class="'+x[2]+'"><em>'+x[0]+':</em> '+x[1]+'</span>'}).join("")+'</li>'}).join("");
+host.insertAdjacentHTML("beforeend",'<section id="'+p.id+'"><h2>'+p.t+'</h2><p class="meta">'+p.m+'</p><ol class="steps">'+st+'</ol><div class="lbl">Move on when you can</div><ul class="proj ex">'+p.x.map(function(t){return cb(t)}).join("")+'</ul>'+(p.r.length?'<div class="lbl">Projects</div><ul class="proj">'+p.r.map(function(r){return cb(r[0],r[1])}).join("")+'</ul>':"")+'</section>');
+});
+nav.insertAdjacentHTML("beforeend",'<li><a href="#tips">Habits and tips</a></li>');
+var boxes=document.querySelectorAll("input[type=checkbox]"),key="roadmap-final",saved=[];
+try{saved=JSON.parse(localStorage.getItem(key)||"[]")}catch(e){}
+function update(){var d=[];boxes.forEach(function(b,i){if(b.checked)d.push(i)});
+document.getElementById("fill").style.width=(d.length/boxes.length*100)+"%";
+document.getElementById("pct").textContent=d.length+" of "+boxes.length+" tasks done";
+try{localStorage.setItem(key,JSON.stringify(d))}catch(e){}}
+boxes.forEach(function(b,i){b.checked=saved.indexOf(i)>-1;b.addEventListener("change",update)});
+update();
+</script>
+</body>
 </html>
