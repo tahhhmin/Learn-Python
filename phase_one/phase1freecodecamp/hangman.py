@@ -1,5 +1,5 @@
 import random
-from words import words
+from phase_one.phase1freecodecamp.words import words
 
 word = []
 revealed_word =  []
